@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function showOrders() {
         return view('orders', [
             'orders' => Order::get(),
-            'keys' => Key::get(),
+            'keys' => Key::has('vehicle')->get(),
             'techs' => Technician::get(),
         ]);
     }
